@@ -34,6 +34,11 @@
     display: flex;
     justify-content: flex-end;
   }
+
+  .link {
+    text-decoration: none;
+    color: white;
+  }
   
   .main_page {
     margin-left: 20px;
@@ -111,12 +116,40 @@
     margin-left: auto;
   }
 
-  @media only screen and (max-width: 400px) {
-   .top_bar {
-       width:100%;
-   }
+  @media (max-width: 400px){
+    
+    body {
+      display: flex;
+    }
 
-   .header-container {
-       width: 100%;
-   }
+    .top_bar {
+      width: 100%;
+    }
+
+    .menu-container {
+      width: 100%;
+    }
+
+    .header-container {
+      width: 100%;
+    }
+
+    .photo-grid-container {
+      width: 100%;
+    }
+
+    .photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .footer {
+      width: 100%;
+    }
+    .footer-one,
+  .footer-three {
+    width: 100px;
   }
+
+  }
+  
