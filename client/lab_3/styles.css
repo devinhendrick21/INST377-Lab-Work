@@ -120,27 +120,22 @@
     
     body {
       display: flex;
-      flex-wrap: wrap;
     }
 
     .top_bar {
       width: 100%;
-      flex-wrap: wrap;
     }
 
     .menu-container {
       width: 100%;
-      flex-wrap: wrap;
     }
 
     .header-container {
       width: 100%;
-      flex-wrap: wrap;
     }
 
     .photo-grid-container {
       width: 100%;
-      flex-wrap: wrap;
     }
 
     .photo-grid {
@@ -150,7 +145,6 @@
 
     .footer {
       width: 100%;
-      flex-wrap: wrap;
     }
     .footer-one,
   .footer-three {
