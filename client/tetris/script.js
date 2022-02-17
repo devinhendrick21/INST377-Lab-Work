@@ -189,7 +189,7 @@ function addScore() {
             });
             const squaresRemoved = squares.splice(i, width);
             squares = squaresRemoved.concat(squares);
-            squares.forEach(cell => grid.appendChild(cell));
+            squares.forEach((cell) => grid.appendChild(cell));
         }
     }
 }
