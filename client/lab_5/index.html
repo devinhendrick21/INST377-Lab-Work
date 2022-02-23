@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="top">Devin Hendrick's Lab 5</header>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="columns">
+                    <form class="speaker-form" action="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"method="GET" >
+                      <div class="field">
+                        <label class="label" for="first-name">First Name</label>
+                          <input id="first-name" name="first_name" type="text">
+                      </div>
+            
+                      <div class="field">
+                        <label class="label" for="food-preference">Food Preference</label>
+                          <input is="food-preference" name="food_preference" type="text">
+                      </div>
+            
+                      <div class="field-blocker">
+                        <legend class="label">Veggie or Vegan?</legend>
+                        <input id="type-1" name="veggie" type="radio" value="Yes">
+                        <label for="type-1" >Yes</label>
+                        <input id="type-2" name="vegan" type="radio" value="No">
+                        <label for="type-2" >No</label>
+                      </div>
+            
+                      <button class="submit">Submit</button>
+                  </form>
+    </div>
+</div>
+</div>
+
+
+</body>
+</html>
