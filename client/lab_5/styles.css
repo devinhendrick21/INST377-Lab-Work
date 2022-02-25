@@ -4,6 +4,25 @@
   box-sizing: border-box;
 }
 
+.html {
+  
+}
+
+.top {
+  width: 100%;
+  background-color: yellow;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 3px;
+}
+
+.box {
+  background-color: yellow;
+  padding: 50px;
+  margin: 12px;
+  border-radius: 3px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -26,19 +45,7 @@ body {
   margin-top: 25px;
 }
 
-.top {
-  background-color: yellow;
-  padding: 50px;
-  margin: 12px;
-  border-radius: 3px;
-}
 
-.box {
-  background-color: yellow;
-  padding: 50px;
-  margin: 12px;
-  border-radius: 3px;
-}
 
 .columns {
   align-items: center;
