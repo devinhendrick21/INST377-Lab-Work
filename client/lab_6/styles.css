@@ -1,62 +1,85 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’,
-      ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
-      background-color: darkslategray;
-   
-  }
-  
-  /* Page Layout */
-  .columns {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 35px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .columns form {
-      display: flex;
-      flex-direction: column;
-  }
-  
-  .wrapper {
-    display: flex;
-  }
-  .container {
-    max-width: 960px;
-    margin-top: 25px;
-    background-color: lime;
-  }
+html {
+  background-color: blue;
+}
 
-  .header {
-      display: block;
-      padding: 15px;
-      border-radius: 4px;
-      background-color: hsl(48, 100%, 67%);
-  }
+.top {
+  width: 100%;
+  background-color: yellow;
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 3px;
+}
 
-  .page_item {
-      display: flex;
-      flex-direction: column;
-      padding: 15px;
-      border-radius: 4px;
-      background-color: #EFEFEF;
-      height: fit-content;
-  }
+.box {
+  background-color: yellow;
+  padding: 50px;
+  margin: 12px;
+  border-radius: 3px;
+}
 
-  .form_item {
-      display: flex;
-      flex-direction: column;
-      margin: 5px;
-  }
+.box2 {
+  background-color: yellow;
+  padding: 30px 150px;
+  margin: 24px;
+  border-radius: 3px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’,
+    ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+ 
+}
+
+/* Page Layout */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+}
+.container {
+  max-width: 960px;
+  margin-top: 25px;
+}
+
+.button {
+  display: flex;
+  left: 20px;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  font-size: 16px;
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.field {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.label {
+  margin-bottom: 8px;
+}
 
 
   
