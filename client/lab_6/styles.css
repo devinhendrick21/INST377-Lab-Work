@@ -49,6 +49,7 @@
       padding: 15px;
       border-radius: 4px;
       background-color: #EFEFEF;
+      height: fit-content;
   }
 
   .form_item {
