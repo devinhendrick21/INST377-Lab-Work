@@ -10,51 +10,32 @@
 
 </head>
 <body>
-  <div class="wrapper">
-    <div class="container">    
-        
-        <div class = "columns">
-            <div class = "column">
-                <div class="top">Devin Hendrick's Lab 5</div>
-            </div>
-        </div>
-
-        <div class = "columns">
-          <form class = "box" action = "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json">
-              
-            <div class = "field">
-                  <label class = "label">First Name</label>
-                  <div class = "control">
-                      <input class = "input" type = "text">
-                  </div>
-              </div>
-
-              <div class = "field">
-                <label class = "label">Food Preference</label>
-                <div class = "control">
-                    <input class = "input" type = "text">
+ <div class="wrapper">
+     <div class="container">
+         <div class="header">Devin Hendrick's Lab 5</div>
+         <div class="columns">
+             <div class="page_item">
+                <form class = "main_form" action="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json" method="get">
+                   
+                    <div class="form_item">
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname" id="fname">
                 </div>
-            </div>
 
-            <div class="field">
-              <label class = "label">Veggie or Vegan?</label>
-              <div class="control">
-                <label class="radio">Yes</label>
-                <input type="radio">
-                <label class = "radio">No</label>
-                <input type="radio">
-              </div>
-            </div>
-            <button class="button">Submit</button>
-            </form>
-
-            <div class="columns">
-              <div class="box2">This is going to be something in two weeks.
-              </div>
-            </div>
-
-      </div>
-    </div>
+                    <div class="form_item">
+                    <label for="pref">Food Preference</label>
+                    <input type="text" name="pref" id="pref">
+                </div>
+                    
+                    <button class="button" type="submit">Submit</button>
+                </form>
+             </div>
+             <div class="page_item">
+                 This is going to be something in two weeks.
+             </div>
+         </div>
+     </div>
+ </div>
   
 <script src="./script.js"></script>
 </body>
