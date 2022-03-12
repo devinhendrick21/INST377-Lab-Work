@@ -22,6 +22,7 @@ async function mainEvent() { // the async keyword means we can make API requests
   
   const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
   const arrayFromJson = await results.json(); // This changes it into data we can use - an object
+  console.log(arrayFromJson)
   if (arrayFromJson.data.length > 0) {
     form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
       submitEvent.preventDefault(); // This prevents your page from refreshing!
