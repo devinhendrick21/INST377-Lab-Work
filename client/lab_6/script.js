@@ -22,6 +22,15 @@ function restoArrayMake(dataArray){
   //});
 }
 
+function createHtmlList(collection) {
+  console.log(collection);
+  const targetList = document.querySelector('.resto-list');
+  collection.forEach((item) => {
+    const injectThisItem = `<li>${item.name}</li>`;
+    targetList.innerHTML += injectThisItem;
+  });
+}
+
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.box');
   const submit = document.querySelector('.submit_button');
@@ -38,6 +47,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       // arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it contains all 1,000 records we need
       const restoArray = restoArrayMake(arrayFromJson.data);
+      createHtmlList(restoArray);
     });
   }
 }
