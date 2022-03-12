@@ -15,6 +15,7 @@ function dataHandler(dataArray){
     return dataArray[restNum];
   });
   
+  console.log(listItems);
   //range.forEach((item) => {
     //console.log('range item', item);
   //});
