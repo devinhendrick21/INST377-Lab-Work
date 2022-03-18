@@ -94,7 +94,7 @@ async function mainEvent() { // the async keyword means we can make API requests
         return lowerName.includes(lowerValue);
       });
 
-      createHtmlList(selectZip);
+      createHtmlListZip(selectZip);
 
     });
 
@@ -104,9 +104,9 @@ async function mainEvent() { // the async keyword means we can make API requests
       // arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it contains all 1,000 records we need
       currentArray = restoArrayMake(arrayFromJson.data);
-      currentArray2 = restoArrayMake(arrayFromJson.data);
+      //currentArray2 = restoArrayMake(arrayFromJson.data);
       createHtmlList(currentArray);
-      //createHtmlListZip(currentArray);
+      createHtmlListZip(currentArray);
     });
   }
 }
