@@ -23,11 +23,18 @@
           <form class = "box" action = "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json">
               
             <div class = "field">
-                  <label class = "label">First Name</label>
+                  <label for="resto_name" class = "label">Restaurant Name</label>
                   <div class = "control">
-                      <input class = "input" type = "text">
+                      <input class = "input" type = "text" id="resto_name">
                   </div>
               </div>
+
+              <div class = "field">
+                <label for="zipcode" class = "label">Zipcode</label>
+                <div class = "control">
+                    <input class = "input" type = "text" id="zipcode">
+                </div>
+            </div>
 
               <div class = "field">
                 <label class = "label">Food Preference</label>
@@ -45,7 +52,7 @@
                 <input type="radio">
               </div>
             </div>
-            <button class="button submit_button">Submit</button>
+            <button class="button submit_button">Change Restaurants</button>
             </form>
 
             <div class="columns">
