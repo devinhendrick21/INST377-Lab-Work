@@ -34,6 +34,18 @@ function createHtmlList(collection) {
   });
 }
 
+function createHtmlListZip(collection) {
+  //console.log(collection);
+  const targetList = document.querySelector('.resto-list');
+  targetList.innerHTML = "";
+  collection.forEach((item) => {
+    const {zip} = item;
+    const displayName = zip.toLowerCase();
+    const injectThisItem = `<li>${item.name}</li>`;
+    targetList.innerHTML += injectThisItem;
+  });
+}
+
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.box');
   const submit = document.querySelector('.submit_button');
@@ -83,7 +95,7 @@ async function mainEvent() { // the async keyword means we can make API requests
         return lowerName.includes(lowerValue);
       });
 
-      createHtmlList(selectZip);
+      createHtmlListZip(selectZip);
 
     });
 
