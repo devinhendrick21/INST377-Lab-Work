@@ -81,15 +81,14 @@ async function mainEvent() { // the async keyword means we can make API requests
 
     });
 
-    let currentArray2 = [];
     zipcode.addEventListener('input', async (event) => {
       console.log(event.target.value);
       
-      if (currentArray2.length < 1) {
+      if (currentArray.length < 1) {
         return;
       }
       
-      const selectZip = currentArray2.filter((item) => {
+      const selectZip = currentArray.filter((item) => {
         const lowerName = item.name.toLowerCase();
         const lowerValue = event.target.value.toLowerCase();
         return lowerName.includes(lowerValue);
@@ -107,7 +106,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       currentArray = restoArrayMake(arrayFromJson.data);
       currentArray2 = restoArrayMake(arrayFromJson.data);
       createHtmlList(currentArray);
-      createHtmlListZip(currentArray2);
+      createHtmlListZip(currentArray);
     });
   }
 }
