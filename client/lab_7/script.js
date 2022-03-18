@@ -41,7 +41,7 @@ function createHtmlListZip(collection) {
   collection.forEach((item) => {
     const {zip} = item;
     const displayName = zip.toLowerCase();
-    const injectThisItem = `<li>${item.zip}</li>`;
+    const injectThisItem = `<li>${item.name}</li>`;
     targetList.innerHTML += injectThisItem;
   });
 }
@@ -89,12 +89,12 @@ async function mainEvent() { // the async keyword means we can make API requests
       }
       
       const selectZip = currentArray.filter((item) => {
-        const lowerName = item.zip.toLowerCase();
+        const lowerName = item.name.toLowerCase();
         const lowerValue = event.target.value.toLowerCase();
         return lowerName.includes(lowerValue);
       });
 
-      createHtmlListZip(selectZip);
+      createHtmlList(selectZip);
 
     });
 
@@ -106,7 +106,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       currentArray = restoArrayMake(arrayFromJson.data);
       currentArray2 = restoArrayMake(arrayFromJson.data);
       createHtmlList(currentArray);
-      createHtmlListZip(currentArray);
+      //createHtmlListZip(currentArray);
     });
   }
 }
