@@ -27,6 +27,8 @@ function createHtmlList(collection) {
   const targetList = document.querySelector('.resto-list');
   targetList.innerHTML = "";
   collection.forEach((item) => {
+    const {name} = item;
+    const displayName = name.toLowerCase();
     const injectThisItem = `<li>${item.name}</li>`;
     targetList.innerHTML += injectThisItem;
   });
@@ -57,12 +59,14 @@ async function mainEvent() { // the async keyword means we can make API requests
         return;
       }
       
-      currentArray.filter((item) => {
-        console.log(item);
-        console.log(item.name);
-        return item.name.includes(event.target.value);
+      const selectResto = currentArray.filter((item) => {
+        const lowerName = item.name.toLowerCase();
+        const lowerValue = event.target.value.toLowerCase();
+        return lowerName.includes(lowerValue);
       });
-      //console.log(matchResto);
+
+      createHtmlList(selectResto);
+
     });
 
     form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
