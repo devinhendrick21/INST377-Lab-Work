@@ -49,8 +49,20 @@ async function mainEvent() { // the async keyword means we can make API requests
   if (arrayFromJson.data.length > 0) {
     submit.style.display = 'block';
 
+    let currentArray = [];
     resto.addEventListener('input', async (event) => {
       console.log(event.target.value);
+      
+      if (currentArray.length < 1) {
+        return;
+      }
+      
+      currentArray.filter((item) => {
+        console.log(item);
+        console.log(item.name);
+        return item.name.includes(event.target.value);
+      });
+      //console.log(matchResto);
     });
 
     form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
@@ -58,8 +70,8 @@ async function mainEvent() { // the async keyword means we can make API requests
       //console.log('form submission'); // this is substituting for a "breakpoint"
       // arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it contains all 1,000 records we need
-      const restoArray = restoArrayMake(arrayFromJson.data);
-      createHtmlList(restoArray);
+      currentArray = restoArrayMake(arrayFromJson.data);
+      createHtmlList(currentArray);
     });
   }
 }
