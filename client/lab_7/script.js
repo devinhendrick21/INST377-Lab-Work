@@ -104,7 +104,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       //console.log('form submission'); // this is substituting for a "breakpoint"
       // arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it contains all 1,000 records we need
-      currentArray = restoArrayMake(arrayFromJson.data, arrayFromJson.data);
+      currentArray, currentArray2 = restoArrayMake(arrayFromJson.data, arrayFromJson.data);
       //currentArray2 = restoArrayMake(arrayFromJson.data);
       createHtmlList(currentArray);
       createHtmlListZip(currentArray2);
