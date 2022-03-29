@@ -23,7 +23,7 @@ body {
     position: absolute;
     background-color: white;
     z-index: +2;
-    left: 580;
+    left: 580px;
 }
 
 .border-top {
