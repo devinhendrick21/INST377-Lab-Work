@@ -65,7 +65,7 @@ body {
 }
 
 .topObstacle {
-    background-color: green;
+    background-color: darkgreen;
     transform: rotate(180deg);
     width: 60px;
     height: 300px;
