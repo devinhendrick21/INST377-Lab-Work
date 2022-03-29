@@ -22,5 +22,12 @@
     background-color: yellow;
     position: absolute;
     width: 60px;
-    height: 15px;
+    height: 45px;
+}
+
+.obstacle {
+    background-color: green;
+    width: 60px;
+    height: 300px;
+    position: absolute;
 }
