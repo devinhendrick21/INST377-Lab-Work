@@ -12,7 +12,7 @@ body {
 .border-left {
     width: 80px;
     height: 790px;
-    position:  absolute;
+    position: absolute;
     background-color: white;
     z-index: +2;
 }
@@ -29,7 +29,7 @@ body {
 .border-top {
     width: 660px;
     height: 50px;
-    position:  absolute;
+    position: absolute;
     background-color: white;
     z-index: +2;
     top: -50px;
@@ -56,8 +56,6 @@ body {
     position: absolute;
     width: 60px;
     height: 45px;
-    left: 220px;
-    bottom: 100px;
 }
 
 .obstacle {
@@ -67,7 +65,7 @@ body {
     position: absolute;
 }
 
-.topObstacle {
+.top0obstacle {
     background-color: green;
     transform: rotate(180deg);
     width: 60px;
