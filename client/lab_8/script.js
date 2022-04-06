@@ -46,8 +46,8 @@ function getRandomIntInclusive(min, max) {
     });
   }
   
-  function initMap () {
-    const map = L.map('map').setView([51.505, -0.09], 13);
+  function initMap (targetId) {
+    const map = L.map(targetId).setView([51.505, -0.09], 13);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -65,7 +65,7 @@ return map;
     
     const resto = document.querySelector('#resto_name');
     const zipcode = document.querySelector('#zipcode');
-    const map = initMap();
+    const map = initMap('map');
     submit.style.display = 'none';
   
     //const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
