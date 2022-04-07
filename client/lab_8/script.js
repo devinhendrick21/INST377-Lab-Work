@@ -91,9 +91,9 @@ return map;
     //const arrayFromJson = {data: []}; //TODO
   
     // this if statement is to prevent a race condition on data load
-    if (storedDataArray.length > 0) {
+    
       submit.style.display = 'block';
-    }
+    
   
       let currentArray = [];
       resto.addEventListener('input', async (event) => {
@@ -141,7 +141,7 @@ return map;
         createHtmlListZip(currentArray);
       });
     }
-  
+  }
     
   // this actually runs first! It's calling the function above
   document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
