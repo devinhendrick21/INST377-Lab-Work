@@ -47,6 +47,7 @@ function getRandomIntInclusive(min, max) {
   }
   
   function initMap (targetId) {
+   // const latLong = [38.7849, 76.8721];
     const map = L.map(targetId).setView([51.505, -0.09], 13);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -66,15 +67,23 @@ return map;
     const resto = document.querySelector('#resto_name');
     const zipcode = document.querySelector('#zipcode');
     const map = initMap('map');
+    const retrievalVar = 'restaurants';
     submit.style.display = 'none';
   
-    //const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
-    //const arrayFromJson = await results.json(); // This changes it into data we can use - an object
-    //console.log(arrayFromJson);
-    const arrayFromJson = {data: []}; //TODO
+    if (localStorage.getItem(retrievalVar) === undefined) {
+    const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
+    const arrayFromJson = await results.json(); // This changes it into data we can use - an object
+    console.log(arrayFromJson);
+    localStorage.setItem(retrievalVar, JSON.stringify(arrayFromJson.data));
+  }
+
+    const storedData = localStorage.getItem(retrievalVar);
+    const storedDataArray = JSON.parse(storedData);
+    console.log(storedDataArray);
+    //const arrayFromJson = {data: []}; //TODO
   
     // this if statement is to prevent a race condition on data load
-    if (arrayFromJson.data.length > 0) {
+    if (storedData.length > 0) {
       submit.style.display = 'block';
   
       let currentArray = [];
@@ -85,7 +94,7 @@ return map;
           return;
         }
         
-        const selectResto = currentArray.filter((item) => {
+        const selectResto = storedData.filter((item) => {
           const lowerName = item.name.toLowerCase();
           const lowerValue = event.target.value.toLowerCase();
           return lowerName.includes(lowerValue);
@@ -117,7 +126,7 @@ return map;
         //console.log('form submission'); // this is substituting for a "breakpoint"
         // arrayFromJson.data - we're accessing a key called 'data' on the returned object
         // it contains all 1,000 records we need
-        currentArray = restoArrayMake(arrayFromJson.data);
+        currentArray = restoArrayMake(storedData);
         createHtmlList(currentArray);
         createHtmlListZip(currentArray);
       });
