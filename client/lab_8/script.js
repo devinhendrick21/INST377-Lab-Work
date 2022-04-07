@@ -60,6 +60,14 @@ function getRandomIntInclusive(min, max) {
 return map;
   }
 
+  function addMapMarkers (map, collection) {
+    collection.forEach(item => {
+    const point = item.geocoded_column_1?.coordinates;
+    console.log(item.geocoded_column_1?.coordinates);
+    L.marker([point[1], point[0]]).addTo(map);
+    });
+  }
+
   async function mainEvent() { // the async keyword means we can make API requests
     const form = document.querySelector('.box');
     const submit = document.querySelector('.submit_button');
@@ -67,7 +75,7 @@ return map;
     const resto = document.querySelector('#resto_name');
     const zipcode = document.querySelector('#zipcode');
     const map = initMap('map');
-    const retrievalVar = 'restaurants';
+    const retrievalVar = 'res=taurants';
     submit.style.display = 'none';
   
     if (localStorage.getItem(retrievalVar) === undefined) {
@@ -128,6 +136,7 @@ return map;
         // it contains all 1,000 records we need
         currentArray = restoArrayMake(storedDataArray);
         createHtmlList(currentArray);
+        addMapMarkers(map, currentArray);
         createHtmlListZip(currentArray);
       });
     }
