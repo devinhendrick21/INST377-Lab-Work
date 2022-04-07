@@ -77,13 +77,13 @@ return map;
     localStorage.setItem(retrievalVar, JSON.stringify(arrayFromJson.data));
   }
 
-    const storedData = localStorage.getItem(retrievalVar);
-    const storedDataArray = JSON.parse(storedData);
+    const storedDataString = localStorage.getItem(retrievalVar);
+    const storedDataArray = JSON.parse(storedDataString);
     console.log(storedDataArray);
     //const arrayFromJson = {data: []}; //TODO
   
     // this if statement is to prevent a race condition on data load
-    if (storedData.length > 0) {
+    if (storedDataArray.length > 0) {
       submit.style.display = 'block';
   
       let currentArray = [];
@@ -94,7 +94,7 @@ return map;
           return;
         }
         
-        const selectResto = storedData.filter((item) => {
+        const selectResto = storedDataArray.filter((item) => {
           const lowerName = item.name.toLowerCase();
           const lowerValue = event.target.value.toLowerCase();
           return lowerName.includes(lowerValue);
@@ -126,7 +126,7 @@ return map;
         //console.log('form submission'); // this is substituting for a "breakpoint"
         // arrayFromJson.data - we're accessing a key called 'data' on the returned object
         // it contains all 1,000 records we need
-        currentArray = restoArrayMake(storedData);
+        currentArray = restoArrayMake(storedDataArray);
         createHtmlList(currentArray);
         createHtmlListZip(currentArray);
       });
