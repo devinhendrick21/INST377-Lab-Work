@@ -68,7 +68,7 @@ return map;
       }
     });
     
-    collection.forEach((item) => {
+    collection.forEach((item => {
     const point = item.geocoded_column_1?.coordinates;
     console.log(item.geocoded_column_1?.coordinates);
     L.marker([point[1], point[0]]).addTo(map);
