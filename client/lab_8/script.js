@@ -98,9 +98,9 @@ return map;
       resto.addEventListener('input', async (event) => {
         console.log(event.target.value);
         
-       // if (currentArray.length < 1) {
-         // return;
-        //}
+        if (currentArray.length < 1) {
+          return;
+        }
         
         const selectResto = storedDataArray.filter((item) => {
           const lowerName = item.name.toLowerCase();
