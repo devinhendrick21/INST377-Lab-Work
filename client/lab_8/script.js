@@ -91,7 +91,7 @@ return map;
     //const arrayFromJson = {data: []}; //TODO
   
     // this if statement is to prevent a race condition on data load
-    
+    if (storedDataArray.length > 0) {
       submit.style.display = 'block';
     
   
