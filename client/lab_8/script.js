@@ -78,17 +78,17 @@ return map;
     const retrievalVar = 'res=taurants';
     submit.style.display = 'none';
   
-    if (localStorage.getItem(retrievalVar) === undefined) {
+    //if (localStorage.getItem(retrievalVar) === undefined) {
     const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
     const arrayFromJson = await results.json(); // This changes it into data we can use - an object
     console.log(arrayFromJson);
     localStorage.setItem(retrievalVar, JSON.stringify(arrayFromJson.data));
-  }
+  //}
 
     const storedDataString = localStorage.getItem(retrievalVar);
     const storedDataArray = JSON.parse(storedDataString);
     console.log(storedDataArray);
-    //const arrayFromJson = {data: []}; //TODO
+   
   
     // this if statement is to prevent a race condition on data load
     if (storedDataArray.length > 0) {
@@ -142,6 +142,7 @@ return map;
       });
     }
   }
+
     
   // this actually runs first! It's calling the function above
   document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
