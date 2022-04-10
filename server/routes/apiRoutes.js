@@ -21,6 +21,17 @@ router.get('/advisors', async (req, res) => {
   }
 });
 
+router.get('/advisors/:id', async (req, res) => {
+  try {
+    const {id} = req.params;
+    const advisors = await db.advisors.findOne({where: {advisor_id:`${id}`}});
+    res.json({data: advisors});
+  } catch (err) {
+    console.error(err);
+    res.send('Server error');
+  }
+});
+
 // localhost:3000/api
 router.get('/', (req, res) => {
   console.log('You touched the default route!');
