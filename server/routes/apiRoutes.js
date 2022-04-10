@@ -20,7 +20,7 @@ router.get('/advisors', async (req, res) => {
     res.send('Server error');
   }
 });
-//test
+
 router.get('/advisors/:id', async (req, res) => {
   try {
     const {id} = req.params;
@@ -31,7 +31,7 @@ router.get('/advisors/:id', async (req, res) => {
     res.send('Server error');
   }
 });
-
+//test
 // localhost:3000/api
 router.get('/', (req, res) => {
   console.log('You touched the default route!');
