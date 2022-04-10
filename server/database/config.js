@@ -2,21 +2,22 @@ export default {
   development: {
     username: 'ubuntu',
     password: 'Veracrypt@12!',
-    database: 'Dining_Hall_Tracker',
+    database: 'ischool',
     host: '174.129.198.86',
-    dialect: 'mysql'
+    dialect: 'mysql',
+    define: {timestamps: false}
   },
   test: {
     username: 'ubuntu',
     password: 'Veracrypt@12!',
-    database: 'Dining_Hall_Tracker',
+    database: 'ischool',
     host: '174.129.198.86',
     dialect: 'mysql'
   },
   production: {
     username: 'ubuntu',
     password: 'Veracrypt@12!',
-    database: 'Dining_Hall_Tracker',
+    database: 'ischool',
     host: '174.129.198.86',
     dialect: 'mysql'
   }

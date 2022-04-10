@@ -11,6 +11,16 @@ import hallIdQuery from '../controllers/diningHall.js';
 
 const router = express.Router();
 
+router.get('/advisors', async (req, res) => {
+  try {
+    const advisors = await db.advisors.findAll();
+    res.json({data: advisors});
+  } catch (err) {
+    console.error(err);
+    res.send('Server error');
+  }
+});
+
 // localhost:3000/api
 router.get('/', (req, res) => {
   console.log('You touched the default route!');
