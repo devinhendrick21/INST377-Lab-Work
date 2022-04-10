@@ -3,7 +3,7 @@ import sequelize from 'sequelize';
 import chalk from 'chalk';
 import fetch from 'node-fetch';
 
-const router = epress.Router();
+const router = express.Router();
 
 //router.get('/', (req, res) => {
   //  console.log('You touched the food service route!');
