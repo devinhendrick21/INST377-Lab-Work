@@ -20,7 +20,7 @@ router.get('/advisors', async (req, res) => {
     res.send('Server error');
   }
 });
-//test
+//testt
 router.get('/advisors/:id', async (req, res) => {
   try {
     const {id} = req.params;
