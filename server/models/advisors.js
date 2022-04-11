@@ -1,3 +1,5 @@
+import { DataTypes } from "sequelize/types";
+
 export default (database, DataTypes) => {
     const advisors = database.define('advisors', {
         advisor_id: {
@@ -9,7 +11,7 @@ export default (database, DataTypes) => {
         advisor_initials: {
             type: DataTypes.STRING,
             allowNull: false, 
-            primaryKey: false,
+            primaryKey: false
         }
     });
     return advisors;
