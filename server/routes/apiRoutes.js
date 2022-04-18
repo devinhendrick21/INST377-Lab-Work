@@ -32,6 +32,65 @@ router.get('/advisors/:id', async (req, res) => {
   }
 });
 
+router.post('/advisors', async (req, res) => {
+  console.info(chalk.bgRedBright.bold('Post request to /advisors'), req.body);
+
+  const existingAdvisor = await db.ischool.findAll({
+    where: {
+      advisor_initials: req.body.advisor_initials
+    }
+  });
+  const advisors = await db.ischool.findAll();
+  console.log(chalk.bgBlueBright.bold('existingAdvisor'), existingAdvisor);
+  const currentId = (await advisors.length) + 1;
+  try {
+    const newAdvisor = await db.ischool.create({
+      advisor_id: currentId,
+      advisor_initials: req.body.advisor_initials,
+    });
+    // res.json(newDining);
+    res.json({message: 'not yet'});
+  } catch (err) {
+    console.error(err);
+    res.json('Server error');
+  }
+});
+
+router.delete('/dining/:hall_id', async (req, res) => {
+  try {
+    await db.DiningHall.destroy({
+      where: {
+        hall_id: req.params.hall_id
+      }
+    });
+    res.send('Successfully Deleted');
+  } catch (err) {
+    console.error(err);
+    res.send('Server error');
+  }
+});
+
+router.put('/dining', async (req, res) => {
+  console.log(chalk.bgCyanBright('touched put endpoint'), req.body);
+  try {
+    await db.DiningHall.update(
+      {
+        hall_name: req.body.hall_name,
+        hall_location: req.body.hall_location
+      },
+      {
+        where: {
+          hall_id: req.body.hall_id
+        }
+      }
+    );
+    res.json({update: req.body.hall_name});
+  } catch (err) {
+    console.error(err);
+    res.send('Server error');
+  }
+});
+
 router.get('/job_title_info', async (req, res) => {
   try {
     const job = await db.sequelizeDB.query(`SELECT * from job_title_info`)
