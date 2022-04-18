@@ -43,7 +43,7 @@ router.post('/advisors', async (req, res) => {
     res.json(newAdvisor);
   } catch (err) {
     console.error(err);
-    res.error('Server error');
+    res.send('Server error');
   }
 });
 
