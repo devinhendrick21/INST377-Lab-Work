@@ -70,21 +70,21 @@ router.delete('/advisors/:advisor_id', async (req, res) => {
   }
 });
 
-router.put('/dining', async (req, res) => {
+router.put('/advisors', async (req, res) => {
   console.log(chalk.bgCyanBright('touched put endpoint'), req.body);
   try {
-    await db.DiningHall.update(
+    await db.ischool.update(
       {
-        hall_name: req.body.hall_name,
-        hall_location: req.body.hall_location
+        advisor_id: req.body.advisor_id,
+        advisor_initials: req.body.advisor_initials
       },
       {
         where: {
-          hall_id: req.body.hall_id
+          advisor_id: req.body.advisor_id
         }
       }
     );
-    res.json({update: req.body.hall_name});
+    res.json({update: req.body.advisor_initials});
   } catch (err) {
     console.error(err);
     res.send('Server error');
