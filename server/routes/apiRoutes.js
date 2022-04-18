@@ -35,16 +35,16 @@ router.get('/advisors/:id', async (req, res) => {
 router.post('/advisors', async (req, res) => {
   console.info(chalk.bgRedBright.bold('Post request to /advisors'), req.body);
 
-  const existingAdvisor = await db.ischool.findAll({
+  const existingAdvisor = await db.advisors.findAll({
     where: {
       advisor_initials: req.body.advisor_initials
     }
   });
-  const advisors = await db.ischool.findAll();
+  const advisors = await db.advisors.findAll();
   console.log(chalk.bgBlueBright.bold('existingAdvisor'), existingAdvisor);
   const currentId = (await advisors.length) + 1;
   try {
-    const newAdvisor = await db.ischool.create({
+    const newAdvisor = await db.advisors.create({
       advisor_id: currentId,
       advisor_initials: req.body.advisor_initials,
     });
@@ -58,7 +58,7 @@ router.post('/advisors', async (req, res) => {
 
 router.delete('/advisors/:advisor_id', async (req, res) => {
   try {
-    await db.ischool.destroy({
+    await db.advisors.destroy({
       where: {
         advisor_id: req.params.advisor_id
       }
@@ -73,7 +73,7 @@ router.delete('/advisors/:advisor_id', async (req, res) => {
 router.put('/advisors', async (req, res) => {
   console.log(chalk.bgCyanBright('touched put endpoint'), req.body);
   try {
-    await db.ischool.update(
+    await db.advisors.update(
       {
         advisor_id: req.body.advisor_id,
         advisor_initials: req.body.advisor_initials
