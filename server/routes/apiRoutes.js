@@ -56,11 +56,11 @@ router.post('/advisors', async (req, res) => {
   }
 });
 
-router.delete('/dining/:hall_id', async (req, res) => {
+router.delete('/advisors/:advisor_id', async (req, res) => {
   try {
-    await db.DiningHall.destroy({
+    await db.ischool.destroy({
       where: {
-        hall_id: req.params.hall_id
+        advisor_id: req.params.advisor_id
       }
     });
     res.send('Successfully Deleted');
