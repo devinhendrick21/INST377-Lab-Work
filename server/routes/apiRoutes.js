@@ -34,7 +34,6 @@ router.get('/advisors/:id', async (req, res) => {
 
 router.post('/advisors', async (req, res) => {
   console.info(chalk.bgRedBright.bold('Post request to /advisors'), req.body);
-
   const existingAdvisor = await db.advisors.findAll({
     where: {
       advisor_initials: req.body.advisor_initials
@@ -46,7 +45,7 @@ router.post('/advisors', async (req, res) => {
   try {
     const newAdvisor = await db.advisors.create({
       advisor_id: currentId,
-      advisor_initials: req.body.advisor_initials,
+      advisor_initials: req.body.advisor_initials
     });
     // res.json(newDining);
     res.json({message: 'not yet'});
