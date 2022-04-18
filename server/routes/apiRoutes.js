@@ -33,25 +33,17 @@ router.get('/advisors/:id', async (req, res) => {
 });
 
 router.post('/advisors', async (req, res) => {
-  console.info(chalk.bgRedBright.bold('Post request to /advisors'), req.body);
-  const existingAdvisor = await db.advisors.findAll({
-    where: {
-      advisor_initials: req.body.advisor_initials
-    }
-  });
-  const advisors2 = await db.advisors.findAll();
-  console.log(chalk.bgBlueBright.bold('existingAdvisor'), existingAdvisor);
-  const currentId = (await advisors2.length) + 1;
+  const advisor = await db.advisors.findAll();
+  const currentId = (await advisor.length) + 1;
   try {
     const newAdvisor = await db.advisors.create({
       advisor_id: currentId,
       advisor_initials: req.body.advisor_initials
     });
-    // res.json(newDining);
-    res.json({message: 'not yet'});
+    res.json(newAdvisor);
   } catch (err) {
     console.error(err);
-    res.json('Server error');
+    res.error('Server error');
   }
 });
 
@@ -83,7 +75,7 @@ router.put('/advisors', async (req, res) => {
         }
       }
     );
-    res.json({update: req.body.advisor_initials});
+    res.send('Successfully Updated');
   } catch (err) {
     console.error(err);
     res.send('Server error');
@@ -250,8 +242,6 @@ router.get('/dining/:hall_id', async (req, res) => {
 });
 
 router.post('/dining', async (req, res) => {
-  console.info(chalk.bgRedBright.bold('Post request to /dining'), req.body);
-
   const existingHall = await db.DiningHall.findAll({
     where: {
       hall_name: req.body.hall_name
@@ -291,7 +281,6 @@ router.delete('/dining/:hall_id', async (req, res) => {
 });
 
 router.put('/dining', async (req, res) => {
-  console.log(chalk.bgCyanBright('touched put endpoint'), req.body);
   try {
     await db.DiningHall.update(
       {
