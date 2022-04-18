@@ -32,6 +32,27 @@ router.get('/advisors/:id', async (req, res) => {
   }
 });
 
+router.get('/job_title_info', async (req, res) => {
+  try {
+    const job = await db.sequelizeDB.query(`SELECT * from job_title_info`)
+    res.json({data: job});
+  } catch (err) {
+    console.error(err);
+    res.send('Server error');
+  }
+});
+
+router.get('/job_title_info/:id', async (req, res) => {
+  try {
+    const {id} = req.params;
+    const job = await db.sequelizeDB.query(`SELECT * from job_title_info where job_title_id = ${id}`)
+    res.json({data: job});
+  } catch (err) {
+    console.error(err);
+    res.send('Server error');
+  }
+});
+
 // localhost:3000/api
 router.get('/', (req, res) => {
   console.log('You touched the default route!');

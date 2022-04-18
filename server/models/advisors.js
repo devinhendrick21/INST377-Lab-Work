@@ -1,5 +1,3 @@
-import { DataTypes } from "sequelize/types";
-
 export default (database, DataTypes) => {
     const advisors = database.define('advisors', {
         advisor_id: {
