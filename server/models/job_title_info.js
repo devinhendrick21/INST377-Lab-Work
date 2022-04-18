@@ -23,4 +23,4 @@ export default (database, DataTypes) => {
     }
   });
   return job;
-}
+};
