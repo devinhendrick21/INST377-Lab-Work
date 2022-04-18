@@ -39,9 +39,9 @@ router.post('/advisors', async (req, res) => {
       advisor_initials: req.body.advisor_initials
     }
   });
-  const advisors = await db.advisors.findAll();
+  const advisors2 = await db.advisors.findAll();
   console.log(chalk.bgBlueBright.bold('existingAdvisor'), existingAdvisor);
-  const currentId = (await advisors.length) + 1;
+  const currentId = (await advisors2.length) + 1;
   try {
     const newAdvisor = await db.advisors.create({
       advisor_id: currentId,
